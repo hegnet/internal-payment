@@ -1,8 +1,9 @@
-import {mockProducts} from "../models/Product";
+import {    Product} from "../models/Product";
 import ProductCard from "./ProductCard";
 import {Stack, Typography} from "@mui/material";
 import React, {useEffect, useState} from "react";
 import Header from "./Header";
+import {getProducts} from "../service/firebase";
 
 export default function Products() {
     const [price, setPrice] = useState(0)
@@ -11,10 +12,16 @@ export default function Products() {
         setPriceMap(priceMap.set(k, v));
         updatePrice()
     }
+    const [products, setProducts] = useState<Product[]>([])
 
-    function incPrice(newPrice: number) {
+    useEffect(() => {
+        getProducts.then(res => {
+            setProducts(res)
+        })
+    }, [])
+
+    function incQuantity(newPrice: number) {
         let oldQuantity = priceMap.get(newPrice)
-        console.log(oldQuantity);
         if (oldQuantity !== undefined) {
             updatePriceMap(newPrice, oldQuantity + 1)
         } else {
@@ -22,7 +29,7 @@ export default function Products() {
         }
     }
 
-    function decPrice(newPrice: number) {
+    function decQuantity(newPrice: number) {
         let oldQuantity = priceMap.get(newPrice)
         if (oldQuantity !== undefined) {
             updatePriceMap(newPrice, oldQuantity - 1)
@@ -39,19 +46,14 @@ export default function Products() {
         setPrice(sum)
     }
 
-    useEffect(() =>
-    {
-        console.log(price);
-    },[price])
-
     return (
         <Stack>
             <Header price={price}/>
             <Stack m={4} mt={8} spacing={3}>
-                {mockProducts.map(pro => {
+                {products && products.map(pro => {
                     return <ProductCard name={pro.name} category={pro.category} price={pro.price}
-                                        description={pro.description} id={pro.id}
-                                        decPrice={decPrice} incPrice={incPrice}
+                                        description={pro.description}
+                                        decPrice={decQuantity} incPrice={incQuantity}
                     />
                 })}
             </Stack>

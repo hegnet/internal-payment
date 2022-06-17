@@ -1,7 +1,8 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import {Box, Container, ThemeProvider} from "@mui/material";
 import {theme} from "./styling/theme";
 import Products from "./components/Products";
+
 
 function App() {
     return (

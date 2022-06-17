@@ -3,7 +3,7 @@ import {Card, CardContent, IconButton, Stack, Typography} from "@mui/material";
 import {Product} from "../models/Product";
 import {AddBox, IndeterminateCheckBox} from "@mui/icons-material";
 
-export default function ProductCard({name, category, price, id, description, decPrice, incPrice}: Product) {
+    export default function ProductCard({name, category, price, description, decPrice, incPrice}: Product) {
     const [quantity, setQuantity] = useState(0)
 
     function addQuantity() {
@@ -34,7 +34,7 @@ export default function ProductCard({name, category, price, id, description, dec
                         spacing={0.5}
                     >
                         <Typography variant={'h5'}>{name}</Typography>
-                        <Typography>{category}</Typography>
+                        <Typography>{description}</Typography>
                         <Typography color={'error.dark'} variant={'h6'}>{price},-</Typography>
                     </Stack>
                     <Stack
