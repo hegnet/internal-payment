@@ -1,6 +1,6 @@
-import {    Product} from "../models/Product";
+import {Product} from "../models/Product";
 import ProductCard from "./ProductCard";
-import {Stack, Typography} from "@mui/material";
+import {Stack} from "@mui/material";
 import React, {useEffect, useState} from "react";
 import Header from "./Header";
 import {getProducts} from "../service/firebase";

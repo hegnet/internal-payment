@@ -1,7 +1,6 @@
-import {AppBar, Box, Button, IconButton, Stack, Toolbar, Typography} from "@mui/material";
+import {AppBar, Box, IconButton, Stack, Toolbar, Typography} from "@mui/material";
 import React from "react";
 import {ShoppingCartCheckout} from "@mui/icons-material";
-import {getProducts} from "../service/firebase";
 
 export type HeaderProps = {
     price: number
