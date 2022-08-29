@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/internal-payment/static/css/main.e6c13ad2.css",
+    "main.js": "/internal-payment/static/js/main.df335784.js",
+    "static/js/787.cf508c61.chunk.js": "/internal-payment/static/js/787.cf508c61.chunk.js",
+    "service-worker.js": "/internal-payment/service-worker.js",
+    "index.html": "/internal-payment/index.html",
+    "main.e6c13ad2.css.map": "/internal-payment/static/css/main.e6c13ad2.css.map",
+    "main.df335784.js.map": "/internal-payment/static/js/main.df335784.js.map",
+    "787.cf508c61.chunk.js.map": "/internal-payment/static/js/787.cf508c61.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.e6c13ad2.css",
+    "static/js/main.df335784.js"
+  ]
+}
