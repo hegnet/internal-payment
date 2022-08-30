@@ -7,7 +7,7 @@ import Products from "./components/Products";
 function App() {
     return (
         <ThemeProvider theme={theme}>
-            <Container sx={{backgroundColor: "#ffffff"}}><Products/></Container>
+            <Container sx={{backgroundColor: "#FEFEF8"}}><Products/></Container>
         </ThemeProvider>
     );
 }

@@ -14,6 +14,7 @@ export default function Header({price}: HeaderProps) {
                     <Stack
                         flexGrow={1}
                         direction="row"
+                        color={'white'}
                         justifyContent="space-between"
                         alignItems="center"
                         pl={3} pr={3}>

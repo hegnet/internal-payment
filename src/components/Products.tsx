@@ -1,6 +1,6 @@
 import {Product} from "../models/Product";
 import ProductCard from "./ProductCard";
-import {Stack} from "@mui/material";
+import {Grid, Stack} from "@mui/material";
 import React, {useEffect, useState} from "react";
 import Header from "./Header";
 import {getProducts} from "../service/firebase";
@@ -49,13 +49,17 @@ export default function Products() {
     return (
         <Stack>
             <Header price={price}/>
-            <Stack m={4} mt={8} spacing={3}>
-                {products && products.map(pro => {
-                    return <ProductCard name={pro.name} category={pro.category} price={pro.price}
-                                        description={pro.description}
-                                        decPrice={decQuantity} incPrice={incQuantity}
-                    />
-                })}
+            <Stack m={2} mt={9}>
+                <Grid color={"green"} container spacing={3}>
+                    {products && products.map(pro => {
+                        return <Grid item md={6} xs={12}>
+                            <ProductCard name={pro.name} category={pro.category}
+                                         price={pro.price}
+                                         description={pro.description}
+                                         decPrice={decQuantity} incPrice={incQuantity}
+                            /></Grid>
+                    })}
+                </Grid>
             </Stack>
         </Stack>
     );
