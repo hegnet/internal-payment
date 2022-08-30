@@ -3,8 +3,8 @@
   "name": "Hegnets Bartendershop",
   "start_url": ".",
   "display": "standalone",
-  "theme_color": "#BF7417",
-  "background_color": "#BF7417",
+  "theme_color": "#BF9742",
+  "background_color": "#BF9742",
   "icons": [
     {
       "src": "windows11/SmallTile.scale-100.png",
